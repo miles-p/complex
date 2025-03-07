@@ -85,6 +85,13 @@ cartesianComplexNumber divideComplexCartesian(cartesianComplexNumber a, cartesia
  */
 cartesianComplexNumber conjugateComplexCartesian(cartesianComplexNumber a);
 
+/**
+ * @brief Finds the conjugate of a complex number in Polar form.
+ * @param a The complex number in Polar form.
+ * @return The conjugate of the complex number in Polar form.
+ */
+polarComplexNumber conjugateComplexPolar(polarComplexNumber a);
+
 #endif // COMPLEX_NUMBER_H
 
 #pragma comment(lib, "m")
@@ -171,5 +178,12 @@ cartesianComplexNumber conjugateComplexCartesian(cartesianComplexNumber a) {
     cartesianComplexNumber result;
     result.real = a.real;
     result.imaginary = -a.imaginary;
+    return result;
+}
+
+polarComplexNumber conjugateComplexPolar(polarComplexNumber a) {
+    polarComplexNumber result;
+    result.modulus = a.modulus;
+    result.argument = -a.argument;
     return result;
 }
