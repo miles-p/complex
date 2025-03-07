@@ -29,5 +29,9 @@ int main() {
     cartesianComplexNumber conjugate = conjugateComplexCartesian(a);
     printf("Conjugate: %f + %fi\n", conjugate.real, conjugate.imaginary);
 
+    // Find the modulus of a complex number
+    double modulus = modulusComplexCartesian(a);
+    printf("Modulus: %f\n", modulus);
+    
     return 0;
 }

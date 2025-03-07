@@ -92,6 +92,13 @@ cartesianComplexNumber conjugateComplexCartesian(cartesianComplexNumber a);
  */
 polarComplexNumber conjugateComplexPolar(polarComplexNumber a);
 
+/**
+ * @brief Finds the magnitude of a complex number in Cartesian form.
+ * @param a The complex number in Cartesian form.
+ * @return The magnitude of the complex number.
+ */
+double modulusComplexCartesian(cartesianComplexNumber a);
+
 #endif // COMPLEX_NUMBER_H
 
 #pragma comment(lib, "m")
@@ -186,4 +193,8 @@ polarComplexNumber conjugateComplexPolar(polarComplexNumber a) {
     result.modulus = a.modulus;
     result.argument = -a.argument;
     return result;
+}
+
+double modulusComplexCartesian(cartesianComplexNumber a) {
+    return sqrt(a.real * a.real + a.imaginary * a.imaginary);
 }
