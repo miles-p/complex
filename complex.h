@@ -99,6 +99,14 @@ polarComplexNumber conjugateComplexPolar(polarComplexNumber a);
  */
 double modulusComplexCartesian(cartesianComplexNumber a);
 
+/**
+ * @brief Finds the value of a complex number raised to a power.
+ * @param a The complex number in Cartesian form.
+ * @param power The power to raise the complex number to.
+ * @return The complex number raised to the power in Cartesian form.
+ */
+cartesianComplexNumber powerComplexCartesian(cartesianComplexNumber a, double power);
+
 #endif // COMPLEX_NUMBER_H
 
 #pragma comment(lib, "m")
@@ -197,4 +205,11 @@ polarComplexNumber conjugateComplexPolar(polarComplexNumber a) {
 
 double modulusComplexCartesian(cartesianComplexNumber a) {
     return sqrt(a.real * a.real + a.imaginary * a.imaginary);
+}
+
+cartesianComplexNumber powerComplexCartesian(cartesianComplexNumber a, double power) {
+    polarComplexNumber polar = cartesianToPolar(a);
+    polar.modulus = pow(polar.modulus, power);
+    polar.argument *= power;
+    return polarToCartesian(polar);
 }
